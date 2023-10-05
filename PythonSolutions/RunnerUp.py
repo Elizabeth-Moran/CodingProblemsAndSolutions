@@ -10,6 +10,7 @@ if __name__ == '__main__':
     # Go through every score, updating the highest and runner up score
     # The runner-up score will either be the previous highest_val, or 
     # the next highest value below it.
+    # O(n) time complexity, O(1) space complexity
  
     runner_up_val = -2147483648
     highest_val = score_arr[0]
