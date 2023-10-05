@@ -43,7 +43,7 @@ function angryProfessor(k, a) {
     // Go through array. If a[i] <= 0, increase onTimeStudentQuantity by 1
     // If onTimeStudentQuantity > k, return "NO"
     // If make it through loop without returning "NO", then return "YES" 
-	// O(N) time, O(1) space
+	// O(N) time complexity, O(1) space complexity!
     
     let onTimeStudentQuantity = 0;
     
