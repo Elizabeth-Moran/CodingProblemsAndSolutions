@@ -22,25 +22,25 @@ def migratoryBirds(arr):
     # Go through hashmap. Return lowest key with highest value
     # O(N) time complexity, O(N) space complexity
     
-    birdIdsQuantity = {}
-    mostOccuringBirdId = arr[0]
-    highestVal = 1
+    bird_ids_quantity = {}
+    most_occuring_bird_id = arr[0]
+    highest_val = 1
     
-    for birdId in arr:
-        if birdId not in birdIdsQuantity.keys():
-            birdIdsQuantity[birdId] = 1
+    for bird_id in arr:
+        if bird_id not in bird_ids_quantity.keys():
+            bird_ids_quantity[bird_id] = 1
         else:
-            birdIdsQuantity[birdId] += 1
+            bird_ids_quantity[bird_id] += 1
             
-    for key in birdIdsQuantity: 
-        val = birdIdsQuantity[key]
-        if val == highestVal and key < mostOccuringBirdId:
-            mostOccuringBirdId = key 
-        elif val > highestVal:
-            mostOccuringBirdId = key
-            highestVal = val
+    for key in bird_ids_quantity: 
+        val = bird_ids_quantity[key]
+        if val == highest_val and key < most_occuring_bird_id:
+            most_occuring_bird_id = key 
+        elif val > highest_val:
+            most_occuring_bird_id = key
+            highest_val = val
     
-    return mostOccuringBirdId
+    return most_occuring_bird_id
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
