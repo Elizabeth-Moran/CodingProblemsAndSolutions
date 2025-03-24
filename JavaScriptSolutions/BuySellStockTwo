@@ -1,0 +1,27 @@
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    // Similar process to before...
+    // Keep track of totalProfit.
+    // 3 pointers now... start, end, dayAfter
+    // if end < start, start = end.
+    // if no dayAfter, or dayAfter < end, sell the stock (end - start, add it to totalProfit)   
+    
+    if (prices.length < 2) { return 0; }
+    
+    let totalProfit = 0;
+    let start = prices[0];
+    for (let i = 1; i < prices.length; i++) {
+        const end = prices[i];
+        const dayAfter = prices[i + 1];
+        if (end < start) { start = end; }
+        else if (!dayAfter || dayAfter < end) {
+            totalProfit += end - start;
+            start = end;
+        } 
+    }
+
+    return totalProfit;
+};
